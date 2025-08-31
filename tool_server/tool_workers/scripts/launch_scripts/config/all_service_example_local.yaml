@@ -1,6 +1,6 @@
 # 基本目录配置 - 修改为您本地的路径
-base_dir: /home/featurize/work/tool/OpenThinkIMG/tool_server/tool_workers
-log_folder: /home/featurize/work/tool/OpenThinkIMG/tool_server/tool_workers/logs/server_log
+base_dir: /home2/lmoukheiber3/OpenThinkIMG/tool_server/tool_workers
+log_folder: /home2/lmoukheiber3/OpenThinkIMG/tool_server/tool_workers/logs/server_log
 
 # 本地配置中这些参数不会被使用，但保留以保持结构一致
 default_calculate_gpus: 1
@@ -34,7 +34,7 @@ tool_worker_config:
         script-addr: ./online_workers/molmo_point_worker.py
         port: 20027
         host: "0.0.0.0"
-        model_path: "/mnt/petrelfs/share_data/songmingyang/model/mm/tools/Molmo-7B-D-0924"
+        model_path: "/home/lmoukheiber3/models/Molmo-7B-D-0924"
 
   - SegmentRegionAroundPoint:
       worker_name: SegmentRegionAroundPoint
@@ -45,7 +45,7 @@ tool_worker_config:
         script-addr: ./online_workers/SAMAroundPoint_worker.py
         port: 20036
         host: "0.0.0.0"
-        sam2_checkpoint: /mnt/petrelfs/share_data/suzhaochen/models/sam2-hiera-large/sam2_hiera_large.pt
+        sam2_checkpoint: /home/lmoukheiber3/models/sam2-hiera-large/sam2_hiera_large.pt
         sam2_model_cfg: sam2_hiera_l.yaml
       
   - OCR:
@@ -68,8 +68,8 @@ tool_worker_config:
         script-addr: ./online_workers/grounding_dino_worker.py
         port: 20003
         host: "0.0.0.0"
-        model-path: /mnt/petrelfs/songmingyang/songmingyang/model/mm/groundingdino_official/groundingdino_swint_ogc.pth
-        model-config: ../src/GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py
+        model-path: /home2/lmoukheiber3/models/groundingdino/groundingdino_swint_ogc.pth
+        model-config: /home2/lmoukheiber3/models/groundingdino/GroundingDINO_SwinT_OGC.py
 
   - DrawHorizontalLineByY:
       worker_name: DrawHorizontalLineByY
